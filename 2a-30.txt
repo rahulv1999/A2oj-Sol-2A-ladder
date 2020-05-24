@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() 
+{   int n,k,s[2050],j=0,d,l=0;
+    cin>>n>>k;
+    for(int i =0;i<n;i++)
+    cin>>s[i];
+    //sort
+    for(int i =0;i<n;i++)
+    {for(j =0 ; j<n-1;j++)
+    {   if(s[j]>s[j+1])
+        {int t = s[j];
+        s[j] = s[j+1];
+        s[j+1] = t;}
+    }}
+    for(j=0;j<n-2;j+=3)
+     {  
+         int a = max(max(s[j+1],s[j+2]),s[j]);
+         d = (5-a); 
+         if(d >= k)
+         l++;
+     }
+     cout<<l;
+     return 0;
+}

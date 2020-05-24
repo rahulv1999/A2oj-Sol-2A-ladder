@@ -1,0 +1,82 @@
+ string s;
+   cin>>s;
+   int len = s.size(),k=0;
+   for(int i=0;i<len;i++)
+   {//h
+      h: if(s[i]=='h')
+       {
+           if(s[i+1]!='h' && s[i+1]!='e')
+           {
+              k=0;
+           }
+           
+           else 
+           {
+               if(s[i+1]=='h')
+               {    i++;
+                   goto h;
+               }
+         //e      
+               else
+               { e:  i++; 
+                    if(s[i+1]!='l' && s[i+1]!='e')
+                {
+                     k=0;
+                      //return 0;
+                 }
+                 
+                 else
+                  {
+                      if(s[i+1]=='e')
+                      {
+                          goto e;
+                      }
+                      
+                      else
+                     { //l
+                        i++;
+                         
+                         if(s[i+1]!='l')
+                         {
+                             k=0;
+                            // return 0;
+                         }
+                         
+                         else
+                         { l: i++;
+                           
+                              if(s[i+1]!='l' && s[i+1]!='o')
+                              {
+                                  k=0;
+                                  // return 0;
+                              }
+                              
+                              else
+                              {
+                                  if(s[i+1]=='l')
+                                  {
+                                      goto l;
+                                  }
+                                  
+                                  else
+                                  {
+                                      cout<<"YES";
+                                      return 0;
+                                  }
+                              }
+                              
+                         }
+                         
+                     }
+                      
+                  }
+                 
+               }
+           }
+        }
+       
+       
+       
+   }
+   
+   cout<<"NO";

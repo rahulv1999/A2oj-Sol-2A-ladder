@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+#define fs(i,n)  for(int i=0;i<n;i++)
+int main()
+{ int n, s[300][300];
+  cin>>n;
+  fs(i,n)
+  fs(j,n)
+  {
+      cin>>s[i][j];
+  }
+  fs(i,n)
+  fs(j,n/2)
+  {
+    if(s[j][j]!=s[n-1-j][n-j-1])
+    {cout<<"NO";return 0;}
+    if(i!=j || i!=n-1-j)
+    {
+        if(s[0][0]==s[i][j])
+        cout<<"NO";return 0;
+    }
+    
+    
+    cout<<"YES";
+    return 0;
+  }
+  
+  
+  
+    return 0;
+}

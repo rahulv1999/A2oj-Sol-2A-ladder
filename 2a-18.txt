@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+#include<limits>
+using namespace std;
+
+int main()
+{   int i=0,count=0;
+    char s[1000],c;
+   while(c!='}')
+   { //cin.clear();
+       cin>>c;
+
+    {
+        if(isalpha(c))
+         {
+             s[i]=c;
+             i++;
+         }
+    }
+   }
+    //i--;
+    if(i==0)
+    {cout<<"0";
+        return 0;
+    }
+    for(int l =0;l<i;l++)
+    for(int m=l+1;m<i;m++)
+    {
+        if(s[l]==s[m])
+         s[m]='0';
+    }
+    for(int l = 0;l<i;l++)
+    {
+        if(s[l]!='0' && isalpha(s[l]))
+        {
+            count++;
+        }
+    }
+    cout<<count;
+}
+

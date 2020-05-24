@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+
+using namespace std;
+
+int main()
+{ 
+    int s[100],sum=0,n,sum1 =0;
+    cin>>n; 
+    for(int i =0;i<n;i++)
+    {   cin>>s[i];
+        sum += s[i];
+    }
+    
+    //sorting in decresing
+   for(int k =0;k<n;k++)
+   {
+    
+       for(int i=0;i<n;i++)
+      {   
+        if(s[i]>s[i-1])
+        {
+            int t = s[i];
+            s[i]=s[i-1];
+            s[i-1]=t;
+        }
+      }
+   }
+   
+   
+   //problem statement
+  int i=0;
+   while(sum>=sum1)
+   {  sum = sum -s[i];
+       sum1 += s[i];
+       i++;
+       
+   }
+   
+   cout<<i;
+return 0;
+
+}
+
+

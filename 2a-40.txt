@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{
+    int n,s[3],a,f=0;
+    s[0]=0;
+    s[1]=0;
+    s[2]=0;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    { cin>>a;
+        if(f==0)
+        { s[0]+=a;
+          f=1;
+          continue;
+        }
+        if(f==1)
+         {s[1]+=a;
+             f=2;
+             continue;
+         }
+        if(f==2)
+        { s[2]+=a;
+            f=0;
+            continue;
+        }
+
+     }
+   int maxi  = max(s[0],max(s[1],s[2]));
+   if(maxi == s[0])
+   cout<<"chest";
+   else if(maxi == s[1])
+   cout<<"biceps";
+   else
+   cout<<"back";
+}

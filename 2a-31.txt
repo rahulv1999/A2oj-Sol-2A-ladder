@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{  int r,c,a,b,i,j,a1[10],b1[10];
+   char s[10][10];
+   cin>>r>>c;
+   a=r;b=c;
+   for( i=0;i<r;i++)
+   {for( j=0;j<c;j++)
+      { cin>>s[i][j];
+       if(s[i][j]=='S')
+        {  
+            a1[i]=7;
+            b1[j]=7;
+            
+        } 
+    }}
+   for( i=0;i<r;i++)
+    { if(a1[i]==7)
+     a--;}
+  for( i=0;i<c;i++)
+     {if(b1[i]==7)
+     b--;}
+     
+    cout<<(a*c + b*r - a*b);
+     
+}

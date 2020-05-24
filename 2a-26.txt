@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{ 
+int n,s[3][5005],sum[3],a,x=0,y=0,z=0;  
+  sum[0]=0;
+  sum[1]=0;
+  sum[2]=0;
+  cin>>n;
+  for(int i=0; i<n;i++)
+  {
+      cin>>a;
+      if(a==1)
+      {  
+        s[0][x] = i+1;
+        x++;
+      }
+      else if(a==2)
+      {
+        s[1][y] = i+1;
+        y++;
+      }
+      else 
+      {
+        s[2][z] = i+1;
+        z++;
+      }
+  }
+  int b = min(min(x,y),z);
+  cout<<b<<endl;
+  if(b!=0)
+  {
+      for(int i =0; i<b;i++)
+      {
+        cout<<s[0][i]<<" "<<s[1][i]<<" "<<s[2][i]<<endl;
+        
+      }
+  }
+ 
+    
+}

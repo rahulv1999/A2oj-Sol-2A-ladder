@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{   
+   int n,m,a,b;
+   cin>>n>>m>>a>>b;
+   cout<<min((int(n/m)*b + min(n%m*a,b)), n*a);
+   
+   
+}
+    

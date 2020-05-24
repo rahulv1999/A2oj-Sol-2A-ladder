@@ -1,0 +1,35 @@
+
+#include <stdio.h>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+   int n,s[100],max=0,min=100,maxi,mini,a;
+   cin>>n;
+   for(int i =0; i<n; i++)
+   {
+       cin>>s[i];
+   }
+   
+   for(int i = 0;i<n;i++)
+   {
+       if(s[i]>max)
+       {
+           max = s[i];
+           maxi = i;
+       }
+       if(s[i]<= min)
+       {
+           min = s[i];
+           mini = i;
+       }
+   }
+   //sorting
+  if (maxi<mini)
+   a = (maxi) + n - mini-1;
+  else
+   a = (maxi) + n - mini -2;
+   cout<<a;
+}
+

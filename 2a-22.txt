@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{   
+  long long int n;
+  cin>>n;
+  int a  = n/10;
+  int b = int(n/100)*10 + n%10;
+  cout<<max(max(a,b),int(n));
+}

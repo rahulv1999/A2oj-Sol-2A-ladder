@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <iostream>
+#include<algorithm>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{  
+   int  n, k, l, c, d, p, nl, np,a=1,cnt=0;
+   cin>>n>>k>>l>>c>>d>>p>>nl>>np;
+   int cd = c*d;
+   int kl = k*l*n;
+   while(a)
+   { kl -=  n * n*l; 
+     if(kl > 0)
+     a *=1;
+     else
+     a *=0;
+     cd -=n;
+     if(cd > 0)
+     a *=1;
+     else
+     a *=0;
+     p -= n*np ;
+     if(p > 0)
+     a *=1;
+     else
+     a *=0;
+     
+     if(a)
+     cnt++;
+     else
+     {cout<<a;
+     return 0;}
+     
+    }
+   
+    
+} 

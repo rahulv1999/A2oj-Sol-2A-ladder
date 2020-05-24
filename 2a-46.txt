@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stdio.h>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    unsigned long int n,k,s[100],m=0;
+    cin>>n>>k;
+    for(int i=0;i<n;i++)
+    cin>>s[i];
+
+    for(int i=0;i<n;i++)
+    { int l=0;
+      int len =0;
+       int a =s[i];
+      while(a>0)
+      {
+          a /=10;
+          len++;
+      }
+      for(int j=1;j<=len;j++)
+      { int z = (s[i]%(int(pow(10,j)))- s[i]%(int(pow(10,j-1))))/int(pow(10,j-1));
+        if(z==4 || z==7)
+        l++;
+
+      }
+      if(l<=k)
+       m++;
+    }
+    cout<<m;
+}
